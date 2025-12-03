@@ -1,3 +1,6 @@
+/* =========================================
+   GLOBAL RESET
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -7,32 +10,12 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #FFFFFFE5;
+    overflow-x: hidden; /* Ngăn thanh cuộn ngang không mong muốn */
 }
 
-.about-section {
-    display: flex;
-    padding: 120px 100px;
-    width: 100%;
-    min-height: 1010px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.about-img {
-    flex-basis: 57%;
-    max-width: 980px;
-    max-height: 768px;
-    width: 100%;
-    height: auto;
-}
-
-.about-content {
-    flex-basis: 40%;
-    width: 100%;
-    padding: 62px 0px 62px 65px;
-    height: 100%;
-}
-
+/* =========================================
+   COMMON COMPONENTS
+   ========================================= */
 .heading-content {
     font-family: 'Yellowtail', cursive;
     font-weight: 400;
@@ -43,35 +26,13 @@ body {
 .text-content {
     margin-bottom: 12px;
     color: #274C5B;
+    line-height: 1.2;
 }
 
 .body-text {
     color: #525C60;
     margin-bottom: 48px;
-}
-
-.benefits-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 58px;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-.benefit-item {
-    display: flex;
-    flex-basis: 45%;
-    gap: 15px;
-}
-
-.icon-wrapper {
-    width: 51px;
-    height: 48px;
-}
-
-.feature-label {
-    font-weight: 500;
+    line-height: 1.65;
 }
 
 .btn-primary {
@@ -81,54 +42,115 @@ body {
     background-color: #274C5B;
     border-radius: 16px;
     gap: 10px;
-    padding: 26px 36px;
+    padding: 20px 36px;
     color: #FFFFFF;
     font-weight: 700;
-    flex-wrap: nowrap;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(14px, 2vw, 18px); /* Chữ co giãn nhẹ */
     border: none;
     cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s;
 }
 
-.btn-primary img {
-    width: 20px;
+.btn-primary:hover {
+    background-color: #7EB693;
+}
+
+/* =========================================
+   SECTION: ABOUT
+   ========================================= */
+.about-section {
+    display: flex;
+    padding: 5.2% 6.25%; 
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.about-img {    
+    flex: 1; /* Chiếm 1 phần */
+    width: 100%; /* Đảm bảo khung linh hoạt */
+}
+
+.about-img img {
+    width: 100%; /* Ảnh luôn fill đầy khung chứa */
+    height: auto;
+    display: block;
+}
+
+.about-content {
+    flex: 1; /* Chiếm 1 phần (50-50 với ảnh) */
+    width: 100%;
+}
+
+.benefits-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    list-style: none;
+    flex-wrap: wrap; /* Cho phép rớt dòng */
+    gap: 20px;
+}
+
+.benefit-item {
+    display: flex;
+    flex-basis: 48%; /* Chia đôi */
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-wrapper {
+    width: 50px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.icon-wrapper img {
+    width: 100%;
     height: auto;
 }
 
+.feature-label {
+    font-weight: 500;
+    line-height: 1;
+    flex: 1;                 
+    display: block;          
+    width: 100%;              
+    word-wrap: break-word;   
+}
+/* =========================================
+   SECTION: FEATURES
+   ========================================= */
 .features-section {
     background-color: #F9F8F8;
-    padding: 160px 260px;
+    padding: 8.4% 12.6%;
     width: 100%;
-    min-height: 1370px;
 }
 
 .features-top {
     display: flex;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
-}
-
-.product-image {
-    width: 714px;
-    height: auto;
+    gap: 5%;
 }
 
 .features-left {
-    min-height: 624px;
+    flex: 1;
 }
 
-.features-left h2 {
-    margin-bottom: 4px;
+.features-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.features-left h1 {
-    margin-bottom: 25px;
-}
-
-.features-left p {
-    margin-bottom: 36px;
+.features-img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px; /* Bo góc nếu cần */
 }
 
 .checkbox-list {
@@ -139,36 +161,37 @@ body {
 }
 
 .heading {
-    display: flex;
+    display: inline-flex; /* Co theo nội dung */
     align-items: center;
-    max-width: 339px;
-    gap: 7px;
-    padding: 29px 91px 29px 27px;
-    white-space: nowrap;
+    gap: 10px;
+    padding: 15px 25px;
     border-radius: 49px;
     background-color: #ECECEC;
     margin-bottom: 12px;
 }
 
-.heading i img {
-    width: 20px;
-    height: auto;
-}
-
 .conten {
     color: #525C60;
+    padding-left: 20px;
+    max-width: 90%;
+}
+
+/* Danh sách Features (Card) */
+.features-bottom {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    padding-left: 60px;
-    max-width: 504px;
+    justify-content: center; 
 }
 
 .features-list {
     display: flex;
-    padding: 0 151px;
-    justify-content: space-between;
+    width: 100%; 
+    max-width: 79%; 
+    justify-content: space-between; 
     list-style: none;
-    gap: 35px;
+    flex-wrap: wrap; 
+    gap: 30px;
+    margin: 0 auto;
 }
 
 .feature-card {
@@ -178,16 +201,15 @@ body {
     text-align: center;
     background-color: #FFFFFF;
     border-radius: 30px;
-    padding: 50px 36px 20px;
+    padding: 50px 36px;
+    width: calc(25% - 30px); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.feature-card .icon img {
-    width: 95px;
-    height: 95px;
-}
-
-.icon {
-    margin-bottom: 15.33px;
+.feature-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 .card-title {
@@ -197,421 +219,227 @@ body {
 
 .card-text {
     color: #525C60;
-    line-height: 1.65;
+    line-height: 1.6;
 }
 
+/* =========================================
+   SECTION: TEAM
+   ========================================= */
 .team-section {
-    padding: 160px 260px;
+    padding: 8% 10%;
     width: 100%;
-    min-height: 1010px;
 }
 
 .section-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 274px;
     text-align: center;
-    margin-bottom: 42px;
-}
-
-.section-header h2 {
-    margin-bottom: 0;
-}
-
-.section-header h1 {
-    margin-bottom: 16px;
-}
-
-.section-header p {
-    margin-bottom: 0;
-    line-height: 1.65;
+    max-width: 800px;
+    margin: 0 auto 50px auto; /* Căn giữa block */
 }
 
 .members-list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     list-style: none;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .members-item {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    /* Chia 3 cột: (100% - 2 gap) / 3 */
+    width: calc(33.33% - 20px); 
+    background-color: #F9F8F8;
+    border-radius: 30px;
+    overflow: hidden; /* Bo góc ảnh */
+    transition: transform 0.3s;
+}
+
+.members-item:hover {
+    transform: translateY(-10px); /* Hiệu ứng nổi lên khi hover */
 }
 
 .member-img {
-    width: 449px;
+    width: 100%; /* Ảnh co giãn theo thẻ cha */
     height: auto;
-    border-radius: 30px 30px 0 0;
+    object-fit: cover;
+    aspect-ratio: 449/486; /* Giữ tỉ lệ ảnh gốc */
 }
 
 .member-info {
-    padding: 35px 28px;
-    min-height: 130px;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
-    align-items: end;
-    background-color: #F9F8F8;
+    align-items: flex-end;
 }
 
 .name {
     font-weight: 800;
     color: #274C5B;
+    margin-bottom: 5px;
 }
 
 .position {
-    font-family: yellowtail, cursive;
+    font-family: 'Yellowtail', cursive;
     font-size: 22px;
     color: #7EB693;
 }
 
 .contact {
     display: flex;
-    gap: 17px;
+    gap: 15px;
 }
 
 .icon-contact {
-    width: 22.330501556396484px;
+    width: 20px;
     height: auto;
+    cursor: pointer;
 }
 
+/* =========================================
+   SECTION: PRODUCTS
+   ========================================= */
 .products-section {
     background-color: #274C5B;
-    padding: 160px 260px;
-    min-height: 836px;
+    padding: 8% 10%;
     width: 100%;
+    margin-bottom: 120px;
 }
 
-.products-section div h2 {
-    margin-bottom: 8px;
-}
-
-.products-section div h1 {
+.products-section .text-content {
     color: #FFFFFF;
-    margin-bottom: 0;
 }
 
 .products-section .section-header {
-    margin-bottom: 31px;
+    margin-bottom: 40px;
 }
 
 .products-list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     list-style: none;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(25% - 23px);
 }
 
 .product-img {
-    width: 336px;
-    height: 314px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* Ảnh vuông */
     border-radius: 30px;
     background-color: #FFFFFF;
+    object-fit: cover;
 }
 
 .product-name {
     color: #FFFFFF;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 20px;
+    font-weight: 500;
 }
 
-/* Tablet Large - 1280px */
-@media (max-width: 1280px) {
-    .about-section {
-        padding: 100px 80px;
-    }
-
-    .features-section {
-        padding: 120px 80px;
-    }
-
-    .features-list {
-        padding: 0 40px;
-        gap: 30px;
-    }
-
-    .team-section {
-        padding: 120px 80px;
-    }
-
-    .section-header {
-        padding: 0 150px;
-    }
-
-    .member-img {
-        width: 380px;
-    }
-
-    .products-section {
-        padding: 120px 80px;
-    }
-
-    .product-img {
-        width: 280px;
-        height: 262px;
-    }
-}
-
-/* Tablet - 1024px */
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+/* Tablet (Dưới 1024px) */
 @media (max-width: 1024px) {
-    .about-section {
-        padding: 80px 50px;
-        min-height: auto;
-    }
-
-    .about-content {
-        padding: 40px 0 40px 30px;
-    }
-
-    .features-section {
-        padding: 100px 50px;
-        min-height: auto;
-    }
-
-    .features-top {
-        gap: 40px;
-    }
-
-    .features-left {
-        min-height: auto;
-    }
-
-    .product-image {
-        width: 100%;
-        max-width: 450px;
-    }
-
-    .features-list {
-        padding: 0 20px;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .feature-card {
-        flex-basis: calc(50% - 10px);
-        padding: 40px 25px 18px;
-    }
-
-    .team-section {
-        padding: 100px 50px;
-        min-height: auto;
-    }
-
-    .section-header {
-        padding: 0 80px;
-    }
-
-    .members-list {
-        gap: 30px;
-    }
-
-    .member-img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .member-info {
-        padding: 25px 20px;
-        min-height: 100px;
-    }
-
+    .about-section, 
+    .features-section, 
+    .team-section, 
     .products-section {
-        padding: 100px 50px;
-        min-height: auto;
+        padding: 60px 5%; /* Giảm padding */
     }
 
-    .products-list {
-        flex-wrap: wrap;
-        gap: 30px;
+    /* Team: Chuyển thành 2 cột */
+    .members-item {
+        width: calc(50% - 15px);
     }
 
+    /* Products: Chuyển thành 2 cột */
     .product-item {
-        flex-basis: calc(50% - 15px);
-    }
-
-    .product-img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 336/314;
-    }
-}
-
-/* Mobile - 768px */
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
-        padding: 60px 30px;
-    }
-
-    .about-img {
-        flex-basis: 100%;
-        max-width: 100%;
+        width: calc(50% - 15px);
         margin-bottom: 30px;
     }
 
-    .about-content {
-        flex-basis: 100%;
-        padding: 0;
+    /* Features Cards: Chuyển thành 2 cột */
+    .feature-card {
+        width: calc(50% - 15px);
     }
+}
 
+/* Mobile (Dưới 768px) */
+@media (max-width: 768px) {
+    /* About: Chồng lên nhau */
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
     .benefits-list {
-        margin-bottom: 40px;
-    }
-
-    .benefit-item {
-        flex-basis: 100%;
-        margin-bottom: 20px;
-    }
-
-    .icon-wrapper {
-        width: 40px;
-        height: 38px;
+        justify-content: center; /* Căn giữa lợi ích */
     }
 
     .btn-primary {
-        padding: 20px 28px;
-        width: 100%;
+        width: 100%; /* Nút full chiều ngang */
     }
 
-    .features-section {
-        padding: 80px 30px;
-    }
-
+    /* Features Top: Chồng lên nhau */
     .features-top {
-        flex-direction: column;
-        margin-bottom: 60px;
+        flex-direction: column-reverse; /* Đảo ảnh lên trên hoặc dưới tùy ý */
+        text-align: center;
     }
-
-    .product-image {
-        width: 100%;
-        max-width: 100%;
-    }
-
+    
     .heading {
-        max-width: 100%;
-        padding: 20px 40px 20px 20px;
+        justify-content: center; /* Căn giữa tiêu đề con */
+        display: flex;
+        width: 100%;
     }
 
     .conten {
-        padding-left: 40px;
+        padding: 0;
         max-width: 100%;
     }
 
-    .checkbox-list {
-        gap: 20px;
-    }
-
-    .features-list {
-        flex-direction: column;
-        padding: 0;
-        gap: 25px;
-    }
-
-    .feature-card {
-        flex-basis: 100%;
-        padding: 40px 30px 20px;
-    }
-
-    .team-section {
-        padding: 80px 30px;
-    }
-
-    .section-header {
-        padding: 0 20px;
-        margin-bottom: 40px;
-    }
-
-    .members-list {
-        flex-direction: column;
-        gap: 40px;
-    }
-
+    /* Team: 1 Cột */
     .members-item {
         width: 100%;
     }
 
-    .member-img {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .member-info {
-        padding: 25px 20px;
-        min-height: auto;
-    }
-
-    .name {
-        font-size: 20px;
-    }
-
-    .position {
-        font-size: 18px;
-    }
-
-    .products-section {
-        padding: 80px 30px;
-    }
-
-    .products-list {
-        flex-direction: column;
-        gap: 30px;
-    }
-
+    /* Products: 1 Cột */
     .product-item {
-        flex-basis: 100%;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
-    .product-img {
+    /* Features Cards: 1 Cột */
+    .feature-card {
         width: 100%;
-        max-width: 100%;
-    }
-}
-
-/* Small Mobile - 480px */
-@media (max-width: 480px) {
-    .about-section {
-        padding: 40px 20px;
-    }
-
-    .benefit-item {
-        gap: 10px;
-    }
-
-    .features-section {
-        padding: 60px 20px;
-    }
-
-    .heading {
-        padding: 18px 30px 18px 18px;
-    }
-
-    .conten {
-        padding-left: 30px;
-    }
-
-    .team-section {
-        padding: 60px 20px;
     }
 
     .section-header {
-        padding: 0 10px;
+        padding: 0;
     }
+    
+    .features-list, .products-list, .members-list {
+        gap: 40px; /* Tăng khoảng cách khi ở mobile cho thoáng */
+    }
+}
 
+/* Small Mobile (Dưới 480px) */
+@media (max-width: 480px) {
+    .benefit-item {
+        flex-basis: 100%; /* Lợi ích xếp dọc */
+    }
+    
     .member-info {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-    }
-
-    .products-section {
-        padding: 60px 20px;
     }
 }
