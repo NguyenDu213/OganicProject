@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 
+/* Media Query */
 @media (min-width: 769px) and (max-aspect-ratio: 1920/1050) {
   html {
     font-size: calc(100vw / 1920);
@@ -48,6 +49,7 @@ main {
   overflow-x: hidden;
 }
 
+/* Main Banner */
 main .home-banner {
   width: 100%;
   height: 80%vw;
@@ -111,6 +113,7 @@ main .home-banner .info-home-banner .view-info-banner .view-icon {
   color: #fff;
 }
 
+/* Sub Banner */
 main .home-sub-banner {
   position: relative;
   border-radius: 16rem;
@@ -180,6 +183,7 @@ main
   color: #68a47f;
 }
 
+/* About */
 main .about-block {
   position: relative;
   width: 100%;
@@ -298,6 +302,7 @@ main
   font-weight: 700;
 }
 
+/* Product */
 .product {
   width: 73%;
   padding: 160rem 0;
@@ -414,6 +419,7 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   color: #ffa858;
 }
 
+/* Review */
 .review {
   width: 100%;
   height: 1266rem;
@@ -554,6 +560,7 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   line-height: 165%;
 }
 
+/* Offer */
 .offer {
   height: 1038rem;
   width: 100%;
@@ -603,6 +610,7 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   background-color: #274c5b;
 }
 
+/* Econis */
 .econis {
   width: 100%;
   height: 1006rem;
@@ -649,6 +657,7 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   line-height: 165%;
 }
 
+/* Options */
 .other-option {
   height: 824rem;
   width: 100%;
@@ -693,7 +702,12 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   border-radius: 20rem;
 }
 
-/* --- Laptop (Max-width: 1200px) --- */
+/* 
+-----------------------------------
+    Laptop (Max-width: 1200px) 
+----------------------------------- 
+*/
+
 @media screen and (max-width: 1200px) {
   main,
   main .home-banner,
@@ -717,7 +731,12 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   }
 }
 
-/* --- TABLET & LAPTOP (Max-width: 1024px) --- */
+/* 
+---------------------------------------------
+    TABLET & LAPTOP (Max-width: 1024px) 
+---------------------------------------------
+*/
+
 @media screen and (max-width: 1024px) {
   /* Banner */
   main .home-banner {
@@ -743,6 +762,7 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
     margin: 0 auto;
   }
 
+  /* Sub Banner */
   main .home-sub-banner {
     padding: 30rem;
     gap: 20rem;
@@ -901,8 +921,14 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   }
 }
 
-/* --- MOBILE (Max-width: 768px) --- */
+/* 
+---------------------------------------------
+    MOBILE (Max-width: 768px) 
+---------------------------------------------
+*/
+
 @media screen and (max-width: 768px) {
+
   /* Main Banner */
   main .home-banner .info-home-banner {
     top: 10rem;
@@ -997,8 +1023,15 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   }
 }
 
-/* --- MOBILE (Max-width: 480px) --- */
+/* 
+---------------------------------------------
+    MOBILE (Max-width: 480px) 
+---------------------------------------------
+*/
+
 @media screen and (max-width: 480px) {
+
+  /* Home Banner */
   main .home-banner {
     min-height: 40vh;
   }
@@ -1014,6 +1047,7 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
     font-size: 38rem;
   }
 
+  /* Product */
   .product p.title-section {
     font-size: 36rem;
     text-align: center;
@@ -1040,10 +1074,13 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
     font-size: 15rem;
   }
 
+  /* Review */
   .review .info-review p.title-review {
     font-size: 32rem;
     text-align: center;
   }
+
+  /* Offer */
   .offer .offer-info .text-offer .offer-info-text .title-offer {
     font-size: 30rem;
   }
