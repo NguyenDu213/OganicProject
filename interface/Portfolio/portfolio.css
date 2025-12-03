@@ -1,0 +1,87 @@
+.banner {
+    background-image: url('../../img/Portfolio/banner.png');
+}
+
+.portfolio {
+    background-color: #F9F8F8;
+    padding: 8.4% 12.6%;
+    width: 100%;
+}
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng */
+    justify-content: space-between; /* Căn đều 2 bên */
+    list-style: none;
+    gap: 43px 24px; 
+}
+
+.portfolio-item {
+    width: calc(33.333% - 28px); 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.portfolio-img {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff; 
+}
+
+.portfolio-img img {
+    width: 100%;         
+    height: auto;        
+    aspect-ratio: 450/421;   
+    object-fit: cover;  
+    display: block;     
+}
+
+
+
+.portfolio-info {
+    padding-top: 20px;
+}
+
+.portfolio-info .name {
+    font-size: 25px;
+    font-weight: 800;
+    color: #274C5B;
+    margin-bottom: 2px;
+}
+
+.portfolio-info .desc {
+    font-family: 'Yellowtail', cursive;
+    font-size: 22px;
+    color: #7EB693;
+}
+
+/* =========================================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================================= */
+
+/* Tablet (Dưới 1024px) */
+@media (max-width: 1024px) {
+    .portfolio {
+        padding: 60px 5%; 
+    }
+
+    .portfolio-item {
+        width: calc(50% - 15px); 
+    }
+}
+
+/* Mobile (Dưới 768px) */
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: 100%; 
+    }
+    
+    .portfolio-list {
+        gap: 40px; 
+    }
+}
