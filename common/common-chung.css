@@ -257,7 +257,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+.banner-title{
+  color: #274C5B;
+}
 /* ul.list-product {
   display: flex;
   flex-wrap: wrap;
