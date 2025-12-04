@@ -131,6 +131,7 @@ body {
 .letter {
   color: rgba(255, 255, 255, 1);
   flex-basis: 50%;
+  max-width: 357px;
 }
 
 .form-email {
@@ -148,6 +149,7 @@ body {
   border: none;
   outline: none;
   font-style: italic;
+  line-height: 1 !important;
 }
 
 .btn-subcribe {
@@ -258,6 +260,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-position: center;
 }
 
 /* ul.list-product {
