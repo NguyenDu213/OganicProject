@@ -265,25 +265,35 @@ body {
     margin-top: 40px;
     width: 90%;
   }
+
   .container {
     width: 90%;
   }
+
   .feature-item {
     flex-direction: column;
   }
+
   .feature-item img {
     width: 100%;
   }
+
   .feature-text {
     width: 100%;
     padding: 30px 30px;
   }
+
   .feature-item:nth-child(2) {
     display: flex;
     flex-direction: column;
-}
-.quality-item {
-  width: 100%;
-  padding: 15px;
-}
+  }
+
+  .quality-item {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .text {
+    white-space: nowrap;
+  }
 }
