@@ -67,7 +67,7 @@ main {
 
 .product {
   width: 73%;
-  padding-top: 90rem;
+  padding: 90rem 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -105,7 +105,6 @@ ul.list-product li.product-item span.product-category {
 }
 
 ul.list-product li.product-item img.product-img {
-  mix-blend-mode: multiply;
   display: block;
   margin-top: 73rem;
   width: 100%;
@@ -178,7 +177,7 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
     gap: 15rem;
   }
   ul.list-product li.product-item {
-    flex-basis: 24%;
+    flex-basis: 23%;
     margin-bottom: 0;
   }
   ul.list-product li.product-item h4.product-name {
@@ -193,10 +192,17 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
 */
 
 @media screen and (max-width: 768px) {
-  /* Banner */
-  .banner {
+  .banner{
     height: auto !important;
     padding: 80rem 0 !important;
+  }
+
+  .banner .banner-title {
+    background-color: #f9f8f8;
+    padding: 16rem 32rem;
+    border-radius: 30rem;
+    color: #274c5b;
+    font-size: 40rem;
   }
 
   /* Product */
@@ -206,11 +212,11 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   }
 
   ul.list-product {
-    gap: 12rem;
-    justify-content: flex-start;
+    gap: 10rem;
+    justify-content: space-between;
   }
   ul.list-product li.product-item {
-    flex-basis: 32%;
+    flex-basis: 48%;
     padding: 15rem 0;
   }
   ul.list-product li.product-item img.product-img {
@@ -230,25 +236,6 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
 */
 
 @media screen and (max-width: 480px) {
-  /* Banner */
-  .banner .banner-title {
-    background-color: #f9f8f8;
-    padding: 16rem 32rem;
-    border-radius: 30rem;
-    color: #274c5b;
-    font-size: 40rem;
-  }
-
-  /* Product */
-  ul.list-product {
-    justify-content: space-between;
-  }
-
-  ul.list-product li.product-item {
-    flex-basis: 48%;
-    padding: 15rem 0;
-  }
-
   li.product-item span.product-category {
     font-size: 11rem;
     padding: 4rem 10rem;
