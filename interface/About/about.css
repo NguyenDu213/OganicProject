@@ -90,7 +90,7 @@ body {
     align-items: flex-start;
     margin-bottom: 40px;
     list-style: none;
-    flex-wrap: wrap; /* Cho phép rớt dòng */
+    /* flex-wrap: wrap;  */
     gap: 20px;
 }
 
@@ -359,21 +359,30 @@ body {
 
     /* Team: Chuyển thành 2 cột */
     .members-item {
-        width: calc(50% - 15px);
+        width: calc(30% - 15px);
     }
 
     /* Products: Chuyển thành 2 cột */
     .product-item {
-        width: calc(50% - 15px);
+        width: calc(50% - 20px);
         margin-bottom: 30px;
     }
 
     /* Features Cards: Chuyển thành 2 cột */
     .feature-card {
-        width: calc(50% - 15px);
+        width: calc(45% - 1px);
     }
 }
 
+@media (max-width:840px) {
+    .benefits-list{
+        flex-wrap: wrap;
+    }
+    .feature-label{
+        white-space: nowrap;
+    }
+    
+}
 /* Mobile (Dưới 768px) */
 @media (max-width: 768px) {
     /* About: Chồng lên nhau */
@@ -413,28 +422,28 @@ body {
     }
 
     /* Products: 1 Cột */
-    .product-item {
+    /* .product-item {
         width: 100%;
-    }
+    } */
 
     /* Features Cards: 1 Cột */
-    .feature-card {
+    /* .feature-card {
         width: 100%;
-    }
+    } */
 
     .section-header {
         padding: 0;
     }
     
     .features-list, .products-list, .members-list {
-        gap: 40px; /* Tăng khoảng cách khi ở mobile cho thoáng */
+        gap: 40px; 
     }
 }
 
 /* Small Mobile (Dưới 480px) */
 @media (max-width: 480px) {
     .benefit-item {
-        flex-basis: 100%; /* Lợi ích xếp dọc */
+        flex-basis: 100%; 
     }
     
     .member-info {

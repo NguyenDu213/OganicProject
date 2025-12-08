@@ -12,6 +12,8 @@ body {
 
 .banner {
   background-image: url('img-service/Banner.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .content {
@@ -121,7 +123,7 @@ body {
   width: 100%;
   height: 1073px;
   background-image: url("img-service/Background.png");
-  padding: 179px 624px 537px;
+  padding-top: 179px;
   text-align: center;
       background-size: cover;
 }
@@ -136,6 +138,7 @@ body {
   line-height: 1.65;
   font-family: "open sans";
   margin-bottom: 50px;
+  
 }
 
 .video-btn {
@@ -173,7 +176,7 @@ body {
 }
 
   .service-image {
-    object-fit: fill;
+    object-fit: cover;
   }
 
   .service-item h4 {
@@ -205,7 +208,7 @@ body {
 }
 }
 
-@media (max-width: 768px) and (min-width: 481px) {
+@media (max-width: 768px) {
   .content {
     margin: 40px auto;
     width: 90%;
@@ -229,7 +232,7 @@ body {
     width: 70%;
   }
   .service-right {
-        margin-top: 50px;
+    margin-top: 0;
     text-align: center;
     width: 70%;
   }
@@ -254,6 +257,15 @@ body {
     .fresh-clean h2 {
       font-size: 34px;
     }
+    .service-item:last-child {
+      margin-bottom: 0;
+    }
+}
+
+@media (max-width: 518px) {
+  .fresh-clean h2 {
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -280,7 +292,6 @@ body {
     width: 70%;
   }
   .service-right {
-        margin-top: 50px;
     text-align: center;
     width: 70%;
   }
@@ -303,6 +314,11 @@ body {
       padding: 80px;
     }
     .fresh-clean h2 {
-      font-size: 34px;
+      font-size: 23px;
     }
+    .video-btn {
+      height: 80px;
+      width: 80px;
+    }
+
 }

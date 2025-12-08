@@ -257,9 +257,10 @@ body {
 
 .banner {
   background-image: url("./img-common/banner.png");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 450px;
+  aspect-ratio: 1920/450;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -384,10 +385,6 @@ ul.votes {
   .cart-item img {
     width: calc(30px + 1vw);
     height: calc(30px + 1vw);
-  }
-
-  .banner {
-    height: calc(350px + 1vw);
   }
 
   /* .product-item {
@@ -557,9 +554,7 @@ ul.votes {
     display: none;
   }
 
-  .banner {
-    height: 250px;
-  }
+
 
   .footer-contact {
     width: 90%;
@@ -768,9 +763,7 @@ ul.votes {
     margin-right: 10px;
   }
 
-  .banner {
-    height: 200px;
-  }
+
 
   .nav-mobile i {
     font-size: 20px;
