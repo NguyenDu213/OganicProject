@@ -939,11 +939,10 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
 
   /* Product */
   ul.list-product {
-    gap: 10rem !important;
-    justify-content: flex-start !important;
+    gap: 12rem !important;
   }
   ul.list-product li.product-item {
-    flex-basis: 32% !important;
+    flex-basis: 49% !important;
     padding: 15rem 0;
   }
   ul.list-product li.product-item img.product-img {
@@ -992,9 +991,15 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   }
   .offer .offer-info .text-offer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 20rem;
     margin-bottom: 30rem;
+  }
+
+  .offer .offer-info .text-offer .offer-info-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Econis */
@@ -1057,11 +1062,11 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
     position: relative;
     width: 90%;
     margin: auto;
-    background: rgba(255, 255, 255, 0.95);
+    /* background: rgba(255, 255, 255, 0.5); */
     padding: 40rem;
     border-radius: 20rem;
     text-align: center;
-    box-shadow: 0 10rem 30rem rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 10rem 30rem rgba(0, 0, 0, 0.1); */
     left: auto;
   }
   main .home-banner .info-home-banner .view-info-banner {
@@ -1084,6 +1089,8 @@ ul.list-product li.product-item .product-more-info ul.votes li.star-vote {
   }
   main .about-block img.about-image {
     height: 400rem;
+    width: auto;
+    transform: translateX(20%);
   }
   main .about-block .info-about {
     position: relative;
