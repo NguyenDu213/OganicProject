@@ -45,7 +45,7 @@ body {
     padding: 20px 36px;
     color: #FFFFFF;
     font-weight: 700;
-    font-size: clamp(14px, 2vw, 18px); /* Chữ co giãn nhẹ */
+    font-size: clamp(14px, 2vw, 18px); 
     border: none;
     cursor: pointer;
     white-space: nowrap;
@@ -108,8 +108,8 @@ body {
 }
 
 .icon-wrapper img {
-    width: 100%;
-    height: auto;
+        width: 100%;
+        height: auto;
 }
 
 .feature-label {
